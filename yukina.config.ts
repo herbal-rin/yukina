@@ -2,11 +2,11 @@ import I18nKeys from "./src/locales/keys";
 import type { Configuration } from "./src/types/config";
 
 const YukinaConfig: Configuration = {
-  title: "Yukina",
-  subTitle: "Yukina Template Demo Site",
-  brandTitle: "Yukina",
+  title: "Herbal",
+  subTitle: "my blog",
+  brandTitle: "Herbal",
 
-  description: "Demo Site",
+  description: "blog",
 
   site: "https://yukina-blog.vercel.app",
 
@@ -26,22 +26,22 @@ const YukinaConfig: Configuration = {
       href: "/about",
     },
     {
-      nameKey: I18nKeys.nav_bar_github,
+      nameKey: I18nKeys.nav_bar_friends,
       href: "https://github.com/WhitePaper233/yukina",
     },
   ],
 
-  username: "WhitePaper 白芷",
+  username: "herbal",
   sign: "Ad Astra Per Aspera.",
   avatarUrl: "https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp",
   socialLinks: [
     {
       icon: "line-md:github-loop",
-      link: "https://github.com/WhitePaper233",
+      link: "https://github.com/herbal-rin",
     },
     {
       icon: "mingcute:bilibili-line",
-      link: "https://space.bilibili.com/22433608",
+      link: "https://space.bilibili.com/435605544",
     },
     {
       icon: "mingcute:netease-music-line",
