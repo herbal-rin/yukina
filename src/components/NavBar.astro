@@ -118,9 +118,10 @@ const navCount = YukinaConfig.navigators.length;
   }
 
   .brand > .title {
-    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 truncate rounded-lg px-4 py-2 text-2xl font-medium text-[var(--primary-color)] transition-all;
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 truncate rounded-lg px-4 py-2 text-xl font-semibold text-[var(--primary-color)] transition-all;
     @apply hover:bg-[var(--primary-color-hover)];
     font-family: var(--brand-font);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
   .brand button {

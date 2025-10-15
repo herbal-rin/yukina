@@ -26,7 +26,7 @@ const { time, wordCount } = props.readingMetadata;
 ---
 
 <div
-  class="mx-3 flex flex-col rounded-3xl bg-[var(--card-color)] lg:mx-0 lg:h-[212px]"
+  class="mx-3 flex flex-col rounded-3xl bg-[var(--card-color)] shadow-lg lg:mx-0 lg:h-[212px]"
 >
   <a
     href={contentUrl}
@@ -160,6 +160,7 @@ const { time, wordCount } = props.readingMetadata;
     @apply flex w-full flex-row items-center space-x-1 align-top text-xl font-semibold text-[var(--text-color)] lg:text-2xl;
     @apply transition-all hover:text-[var(--primary-color)];
     font-family: var(--primary-font);
+    line-height: 1.4;
   }
 
   .data {
@@ -173,7 +174,7 @@ const { time, wordCount } = props.readingMetadata;
   }
 
   .desc {
-    @apply line-clamp-1 text-[var(--text-color)];
+    @apply line-clamp-2 text-[var(--text-color)] leading-relaxed;
     font-family: var(--primary-font);
   }
 
