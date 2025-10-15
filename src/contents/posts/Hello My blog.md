@@ -6,7 +6,6 @@ tags: [First blog post, Record life]
 category: life
 licenseName: "Unlicensed"
 author: herbal
-sourceLink: "https://github.com/emn178/markdown"
 draft: false
 ---
 
