@@ -10,7 +10,15 @@ export const zh_CN: Translation = {
   [key.nav_bar_archive]: "归档",
   [key.nav_bar_about]: "关于",
   [key.nav_bar_github]: "GitHub",
+  [key.nav_bar_friends]: "友链",
   [key.nav_bar_search_placeholder]: "搜索",
+
+  [key.friends_title]: "友情链接",
+  [key.friends_subtitle]: "与志同道合的朋友们",
+  [key.friends_description]: "这里是我收集的一些优秀博客和网站，欢迎大家互相交流学习。",
+  [key.friends_apply_title]: "申请友链",
+  [key.friends_apply_description]: "如果你也想与我交换友链，欢迎联系我！",
+  [key.friends_apply_requirements]: "申请要求：内容健康向上，更新频率稳定，有个人特色。",
 
   [key.post_card_words]: "字",
   [key.post_card_minutes]: "分钟",

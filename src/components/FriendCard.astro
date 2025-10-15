@@ -1,0 +1,142 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  name: string;
+  url: string;
+  avatar?: string;
+  description?: string;
+  tags?: string[];
+}
+
+const props = Astro.props;
+const defaultAvatar = "https://via.placeholder.com/80x80/6366f1/ffffff?text=?";
+---
+
+<a 
+  href={props.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="friend-card"
+>
+  <div class="card-content">
+    <!-- 头像和基本信息 -->
+    <div class="friend-header">
+      <div class="avatar-container">
+        <img 
+          src={props.avatar || defaultAvatar}
+          alt={`${props.name}的头像`}
+          class="friend-avatar"
+        />
+      </div>
+      <div class="friend-info">
+        <h3 class="friend-name">{props.name}</h3>
+        <div class="external-link">
+          <Icon name="heroicons:arrow-top-right-on-square" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 描述 -->
+    {props.description && (
+      <div class="friend-description">
+        <p>{props.description}</p>
+      </div>
+    )}
+
+    <!-- 标签 -->
+    {props.tags && props.tags.length > 0 && (
+      <div class="friend-tags">
+        {props.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <!-- 悬停效果 -->
+  <div class="card-overlay">
+    <Icon name="heroicons:arrow-right" />
+  </div>
+</a>
+
+<style>
+  .friend-card {
+    @apply relative block h-full overflow-hidden rounded-2xl bg-[var(--card-color)] transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+    @apply border border-transparent hover:border-[var(--primary-color-lighten)];
+  }
+
+  .card-content {
+    @apply relative z-10 h-full p-6;
+  }
+
+  .friend-header {
+    @apply mb-4 flex items-center space-x-4;
+  }
+
+  .avatar-container {
+    @apply flex-shrink-0;
+  }
+
+  .friend-avatar {
+    @apply h-16 w-16 rounded-full object-cover ring-2 ring-[var(--primary-color-lighten)];
+  }
+
+  .friend-info {
+    @apply flex-1 min-w-0;
+  }
+
+  .friend-name {
+    @apply text-xl font-semibold text-[var(--text-color)] truncate;
+    font-family: var(--primary-font);
+  }
+
+  .external-link {
+    @apply mt-1 text-[var(--primary-color)] opacity-60;
+  }
+
+  .friend-description {
+    @apply mb-4;
+  }
+
+  .friend-description p {
+    @apply text-sm text-[var(--text-color-lighten)] line-clamp-2;
+    font-family: var(--primary-font);
+  }
+
+  .friend-tags {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .tag {
+    @apply rounded-full bg-[var(--primary-color-lighten)] px-3 py-1 text-xs font-medium text-[var(--primary-color)];
+    font-family: var(--primary-font);
+  }
+
+  .card-overlay {
+    @apply absolute inset-0 z-20 flex items-center justify-center bg-[var(--primary-color)] opacity-0 transition-all duration-300;
+  }
+
+  .card-overlay svg {
+    @apply text-white text-2xl;
+  }
+
+  .friend-card:hover .card-overlay {
+    @apply opacity-90;
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .friend-header {
+      @apply flex-col items-start space-x-0 space-y-3;
+    }
+
+    .friend-info {
+      @apply w-full;
+    }
+
+    .friend-name {
+      @apply text-lg;
+    }
+  }
+</style>

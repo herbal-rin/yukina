@@ -2,30 +2,37 @@ import type { Translation } from "../translation";
 import key from "../keys";
 
 export const en: Translation = {
-  [key.copy_right_author]: "作者",
-  [key.copy_right_publish_date]: "发布日期",
-  [key.copy_right_license]: "许可证",
+  [key.copy_right_author]: "Author",
+  [key.copy_right_publish_date]: "Published Date",
+  [key.copy_right_license]: "License",
 
-  [key.nav_bar_home]: "首页",
-  [key.nav_bar_archive]: "归档",
-  [key.nav_bar_about]: "关于",
+  [key.nav_bar_home]: "Home",
+  [key.nav_bar_archive]: "Archive",
+  [key.nav_bar_about]: "About",
   [key.nav_bar_github]: "GitHub",
-  [key.nav_bar_friends]: "友链",
-  [key.nav_bar_search_placeholder]: "搜索",
+  [key.nav_bar_friends]: "Friends",
+  [key.nav_bar_search_placeholder]: "Search",
 
-  [key.post_card_words]: "字",
-  [key.post_card_minutes]: "分钟",
+  [key.friends_title]: "Friends Links",
+  [key.friends_subtitle]: "With like-minded friends",
+  [key.friends_description]: "Here are some excellent blogs and websites I've collected. Welcome to exchange and learn from each other.",
+  [key.friends_apply_title]: "Apply for Link Exchange",
+  [key.friends_apply_description]: "If you also want to exchange links with me, please feel free to contact me!",
+  [key.friends_apply_requirements]: "Requirements: Healthy content, stable update frequency, and personal characteristics.",
 
-  [key.side_bar_categories]: "分类",
-  [key.side_bar_tags]: "标签",
-  [key.side_bar_view_more]: "查看更多",
+  [key.post_card_words]: "words",
+  [key.post_card_minutes]: "minutes",
 
-  [key.archive_year_title_count]: "共 {{}} 篇文章",
+  [key.side_bar_categories]: "Categories",
+  [key.side_bar_tags]: "Tags",
+  [key.side_bar_view_more]: "View More",
 
-  [key.pages_categories_archive]: "文章归档",
-  [key.pages_tags_archive]: "标签归档",
-  [key.pages_archive_archive]: "归档",
+  [key.archive_year_title_count]: "{{}} articles in total",
 
-  [key.pages_tags_title]: "标签",
-  [key.pages_categories_title]: "分类",
+  [key.pages_categories_archive]: "Category Archive",
+  [key.pages_tags_archive]: "Tag Archive",
+  [key.pages_archive_archive]: "Archive",
+
+  [key.pages_tags_title]: "Tags",
+  [key.pages_categories_title]: "Categories",
 };

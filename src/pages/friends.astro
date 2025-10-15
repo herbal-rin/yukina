@@ -1,0 +1,131 @@
+---
+import Main from "../layouts/MainLayout.astro";
+import FriendCard from "../components/FriendCard.astro";
+import { i18n } from "../locales/translation";
+import I18nKeys from "../locales/keys";
+import YukinaConfig from "../../yukina.config";
+
+// 使用配置文件中的友链数据
+const friends = YukinaConfig.friends;
+---
+
+<Main 
+  title={i18n(I18nKeys.friends_title)}
+  subTitle={i18n(I18nKeys.friends_subtitle)}
+>
+  <div class="friends-container">
+    <!-- 友链介绍 -->
+    <div class="intro-section">
+      <div class="intro-card">
+        <h2 class="intro-title">{i18n(I18nKeys.friends_title)}</h2>
+        <p class="intro-description">{i18n(I18nKeys.friends_description)}</p>
+      </div>
+    </div>
+
+    <!-- 友链列表 -->
+    <div class="friends-grid">
+      {friends.map((friend, index) => (
+        <div 
+          class="friend-item onload-animation"
+          style={`animation-delay: calc(var(--onload-animation-delay) + ${index + 1} * var(--onload-animation-interval));`}
+        >
+          <FriendCard 
+            name={friend.name}
+            url={friend.url}
+            avatar={friend.avatar}
+            description={friend.description}
+            tags={friend.tags}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- 申请友链 -->
+    <div class="apply-section">
+      <div class="apply-card">
+        <h3 class="apply-title">{i18n(I18nKeys.friends_apply_title)}</h3>
+        <p class="apply-description">{i18n(I18nKeys.friends_apply_description)}</p>
+        <div class="apply-requirements">
+          <p>{i18n(I18nKeys.friends_apply_requirements)}</p>
+        </div>
+        <div class="apply-contact">
+          <a 
+            href={YukinaConfig.contactLink || `mailto:${YukinaConfig.username}@example.com`}
+            class="contact-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            联系我
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Main>
+
+<style>
+  .friends-container {
+    @apply w-full space-y-8;
+  }
+
+  .intro-section {
+    @apply w-full;
+  }
+
+  .intro-card {
+    @apply rounded-2xl bg-[var(--card-color)] p-8 text-center;
+  }
+
+  .intro-title {
+    @apply mb-4 text-3xl font-bold text-[var(--text-color)];
+    font-family: var(--primary-font);
+  }
+
+  .intro-description {
+    @apply text-lg text-[var(--text-color-lighten)];
+    font-family: var(--primary-font);
+  }
+
+  .friends-grid {
+    @apply grid gap-6 justify-items-center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .friend-item {
+    @apply w-full max-w-sm;
+  }
+
+  .apply-section {
+    @apply w-full;
+  }
+
+  .apply-card {
+    @apply rounded-2xl bg-gradient-to-br from-[var(--primary-color-lighten)] to-[var(--primary-color)] p-8 text-center;
+  }
+
+  .apply-title {
+    @apply mb-4 text-2xl font-bold text-white;
+    font-family: var(--primary-font);
+  }
+
+  .apply-description {
+    @apply mb-4 text-lg text-white/90;
+    font-family: var(--primary-font);
+  }
+
+  .apply-requirements {
+    @apply mb-6 text-sm text-white/80;
+    font-family: var(--primary-font);
+  }
+
+  .apply-contact {
+    @apply flex justify-center;
+  }
+
+  .contact-button {
+    @apply rounded-lg bg-white px-6 py-3 font-semibold text-[var(--primary-color)] transition-all hover:bg-white/90 hover:shadow-lg;
+    font-family: var(--primary-font);
+  }
+</style>

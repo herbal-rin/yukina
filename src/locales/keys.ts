@@ -10,6 +10,13 @@ enum I18nKeys {
   nav_bar_friends = "nav_bar_friends",
   nav_bar_search_placeholder = "nav_bar_search_placeholder",
 
+  friends_title = "friends_title",
+  friends_subtitle = "friends_subtitle",
+  friends_description = "friends_description",
+  friends_apply_title = "friends_apply_title",
+  friends_apply_description = "friends_apply_description",
+  friends_apply_requirements = "friends_apply_requirements",
+
   post_card_words = "post_card_words",
   post_card_minutes = "post_card_minutes",
 

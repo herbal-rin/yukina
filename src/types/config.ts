@@ -19,6 +19,20 @@ interface Configuration {
 
   socialLinks: { icon: string; link: string }[];
 
+  /**
+   * 联系链接 - 友链页面"联系我"按钮的链接
+   * 可以是邮箱地址、社交媒体链接或自定义页面
+   */
+  contactLink?: string;
+
+  friends: {
+    name: string;
+    url: string;
+    avatar?: string;
+    description?: string;
+    tags?: string[];
+  }[];
+
   maxSidebarCategoryChip: number;
   maxSidebarTagChip: number;
   maxFooterCategoryChip: number;
