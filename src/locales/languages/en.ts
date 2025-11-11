@@ -11,6 +11,7 @@ export const en: Translation = {
   [key.nav_bar_about]: "About",
   [key.nav_bar_github]: "GitHub",
   [key.nav_bar_friends]: "Friends",
+  [key.nav_bar_guestbook]: "Guestbook",
   [key.nav_bar_search_placeholder]: "Search",
 
   [key.friends_title]: "Friends Links",

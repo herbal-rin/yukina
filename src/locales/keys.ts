@@ -8,6 +8,7 @@ enum I18nKeys {
   nav_bar_about = "nav_bar_about",
   nav_bar_github = "nav_bar_github",
   nav_bar_friends = "nav_bar_friends",
+  nav_bar_guestbook = "nav_bar_guestbook",
   nav_bar_search_placeholder = "nav_bar_search_placeholder",
 
   friends_title = "friends_title",

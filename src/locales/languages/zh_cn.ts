@@ -11,6 +11,7 @@ export const zh_CN: Translation = {
   [key.nav_bar_about]: "关于",
   [key.nav_bar_github]: "GitHub",
   [key.nav_bar_friends]: "友链",
+  [key.nav_bar_guestbook]: "留言板",
   [key.nav_bar_search_placeholder]: "搜索",
 
   [key.friends_title]: "友情链接",

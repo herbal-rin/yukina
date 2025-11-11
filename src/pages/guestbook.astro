@@ -1,0 +1,84 @@
+---
+/**
+ * 留言板页面
+ * 使用 Giscus 评论系统实现
+ */
+import Main from "../layouts/MainLayout.astro";
+import Comments from "../components/Comments.astro";
+import { i18n } from "../locales/translation";
+import I18nKeys from "../locales/keys";
+
+const title = "留言板";
+const subtitle = "欢迎留言交流";
+---
+
+<Main title={title} subTitle={subtitle}>
+  <div class="guestbook-container">
+    <!-- 留言板介绍 -->
+    <div class="intro-section">
+      <div class="intro-card">
+        <h2 class="intro-title">💬 留言板</h2>
+        <p class="intro-description">
+          欢迎来到我的留言板！你可以在这里留下你的想法、建议或者问候。
+        </p>
+        <div class="intro-note">
+          <p>📝 需要使用 GitHub 账号登录才能留言</p>
+          <p>👍 支持 Markdown 格式和 Emoji 表情</p>
+          <p>💬 可以互相回复和点赞</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 评论区 -->
+    <Comments class="onload-animation" />
+  </div>
+</Main>
+
+<style>
+  .guestbook-container {
+    @apply w-full space-y-8;
+  }
+
+  .intro-section {
+    @apply w-full;
+  }
+
+  .intro-card {
+    @apply rounded-2xl bg-[var(--card-color)] p-8 text-center shadow-lg;
+  }
+
+  .intro-title {
+    @apply mb-4 text-3xl font-bold text-[var(--text-color)];
+    font-family: var(--primary-font);
+  }
+
+  .intro-description {
+    @apply mb-6 text-lg text-[var(--text-color-lighten)];
+    font-family: var(--primary-font);
+  }
+
+  .intro-note {
+    @apply space-y-2 rounded-xl bg-[var(--primary-color-lighten)] p-4 text-sm text-[var(--text-color-lighten)];
+    font-family: var(--primary-font);
+  }
+
+  .intro-note p {
+    @apply text-[var(--text-color)];
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .intro-card {
+      @apply p-6;
+    }
+
+    .intro-title {
+      @apply text-2xl;
+    }
+
+    .intro-description {
+      @apply text-base;
+    }
+  }
+</style>
+

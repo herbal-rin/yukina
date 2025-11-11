@@ -7,6 +7,7 @@ category: 技术指南
 licenseName: "Unlicensed"
 author: herbal
 draft: false
+cover: "https://vip.123pan.cn/1846863100/yk6baz03t0l000d7w33fvn1d6zgbpjo2DIYxAqYzDweODcxvBIryBF==.png"
 ---
 
 # 写在之前：为什么要停止更新MacOS26🤗
