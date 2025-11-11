@@ -75,6 +75,10 @@ const YukinaConfig: Configuration = {
       nameKey: I18nKeys.nav_bar_friends, // 友链
       href: "/friends",
     },
+    {
+      nameKey: I18nKeys.nav_bar_guestbook, // 留言板
+      href: "/guestbook",
+    },
   ],
 
   // ==================== 个人信息 ====================
