@@ -19,7 +19,7 @@ const tagKeys = [...tags.keys()];
       class="onload-animation rounded-3xl bg-[var(--card-color)] p-3"
       style=`animation-delay: var(--onload-animation-delay);`
     >
-      <a href="/about" class="avatar-wrapper">
+      <a href="/aboutme" class="avatar-wrapper">
         <img
           src={YukinaConfig.avatarUrl}
           alt="avatar"
@@ -36,9 +36,15 @@ const tagKeys = [...tags.keys()];
         YukinaConfig.socialLinks.length > 0 && (
           <div class="mt-1 flex flex-row justify-center">
             <div class="flex w-[184px] flex-wrap justify-center gap-2">
-              {YukinaConfig.socialLinks.map((item) => (
-                <SocialIcon name={item.icon} link={item.link} />
-              ))}
+              {YukinaConfig.socialLinks
+                .filter((item) => 
+                  item.icon === "line-md:github-loop" || 
+                  item.icon === "mingcute:bilibili-line" || 
+                  item.icon === "heroicons:envelope"
+                )
+                .map((item) => (
+                  <SocialIcon name={item.icon} link={item.link} />
+                ))}
             </div>
           </div>
         )

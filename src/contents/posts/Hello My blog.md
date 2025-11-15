@@ -9,7 +9,7 @@ author: herbal
 draft: false
 ---
 
-这是我的个人blog，是在朋友@cannian帮助下用的github上的开源项目(https://github.com/herbal-rin/yukina)搭建的。
+这是我的个人blog，是在朋友@cannian帮助下用的github上的开源项目 (https://github.com/herbal-rin/yukina) 搭建的。
 
 虽然搭建起来了，但还没有想好要发什么，有点羞耻）））
 

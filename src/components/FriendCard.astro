@@ -64,10 +64,12 @@ const defaultAvatar = "https://via.placeholder.com/80x80/6366f1/ffffff?text=?";
   .friend-card {
     @apply relative block h-full overflow-hidden rounded-2xl bg-[var(--card-color)] transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
     @apply border border-transparent hover:border-[var(--primary-color-lighten)];
+    display: block;
   }
 
   .card-content {
-    @apply relative z-10 h-full p-6;
+    @apply relative z-10 p-6;
+    min-height: 100%;
   }
 
   .friend-header {
@@ -114,7 +116,13 @@ const defaultAvatar = "https://via.placeholder.com/80x80/6366f1/ffffff?text=?";
   }
 
   .card-overlay {
-    @apply absolute inset-0 z-20 flex items-center justify-center bg-[var(--primary-color)] opacity-0 transition-all duration-300;
+    @apply absolute z-20 flex items-center justify-center bg-[var(--primary-color)] opacity-0 transition-all duration-300 rounded-2xl;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .card-overlay svg {

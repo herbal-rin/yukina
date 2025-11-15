@@ -3,8 +3,8 @@
 title: "评论功能和留言板上线！💬"
 published: 2025-11-12
 description: "快来留言和评论吧！"
-tags: [博客优化, 评论系统]
-category: "博客优化完善"
+tags: [博客优化, 评论]
+category: "博客完善"
 draft: false
 cover: "https://vip.123pan.cn/1846863100/yk6baz03t0l000d7w33fvn69obggsmh9DIYxAqYzDweODcxvBIryBF==.png"
 ---

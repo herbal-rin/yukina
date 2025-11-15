@@ -16,7 +16,7 @@ const tagKeys = [...tags.keys()];
   <!-- Owner info card -->
   <div class="rounded-3xl bg-[var(--card-color)] transition-all lg:hidden">
     <div class="flex flex-row md:flex-col md:pt-4">
-      <a href="/about" class="relative h-40 w-40 md:hidden">
+      <a href="/aboutme" class="relative h-40 w-40 md:hidden">
         <img
           class="lozad absolute left-0 top-0 h-40 rounded-l-3xl"
           data-src={YukinaConfig.avatarUrl}
@@ -28,6 +28,7 @@ const tagKeys = [...tags.keys()];
         </div>
       </a>
       <a
+        href="/aboutme"
         class="mx-auto hidden h-40 w-40 cursor-pointer rounded-3xl transition-all hover:brightness-75 md:block"
       >
         <img
@@ -39,7 +40,7 @@ const tagKeys = [...tags.keys()];
       <div class="flex grow flex-col justify-center space-y-4 p-4">
         <div class="flex flex-col items-center">
           <a
-            href="/about"
+            href="/aboutme"
             class="line-clamp-1 text-xl font-semibold text-[var(--text-color)]"
           >
             {YukinaConfig.username}
@@ -52,13 +53,19 @@ const tagKeys = [...tags.keys()];
         </div>
         <ul class="flex flex-row items-center justify-center space-x-6">
           {
-            YukinaConfig.socialLinks.map((item) => (
-              <li>
-                <a href={item.link} class="text-[var(--primary-color)]">
-                  <Icon name={item.icon} size={24} />
-                </a>
-              </li>
-            ))
+            YukinaConfig.socialLinks
+              .filter((item) => 
+                item.icon === "line-md:github-loop" || 
+                item.icon === "mingcute:bilibili-line" || 
+                item.icon === "heroicons:envelope"
+              )
+              .map((item) => (
+                <li>
+                  <a href={item.link} class="text-[var(--primary-color)]">
+                    <Icon name={item.icon} size={24} />
+                  </a>
+                </li>
+              ))
           }
         </ul>
       </div>

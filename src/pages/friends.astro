@@ -1,6 +1,7 @@
 ---
 import Main from "../layouts/MainLayout.astro";
 import FriendCard from "../components/FriendCard.astro";
+import { Icon } from "astro-icon/components";
 import { i18n } from "../locales/translation";
 import I18nKeys from "../locales/keys";
 import YukinaConfig from "../../yukina.config";
@@ -45,9 +46,6 @@ const friends = YukinaConfig.friends;
       <div class="apply-card">
         <h3 class="apply-title">{i18n(I18nKeys.friends_apply_title)}</h3>
         <p class="apply-description">{i18n(I18nKeys.friends_apply_description)}</p>
-        <div class="apply-requirements">
-          <p>{i18n(I18nKeys.friends_apply_requirements)}</p>
-        </div>
         <div class="apply-contact">
           <a 
             href={YukinaConfig.contactLink || `mailto:${YukinaConfig.username}@example.com`}
@@ -55,7 +53,8 @@ const friends = YukinaConfig.friends;
             target="_blank"
             rel="noopener noreferrer"
           >
-            联系我
+            <Icon name="heroicons:paper-airplane" size={20} />
+            <span>发送邮件</span>
           </a>
         </div>
       </div>
@@ -102,21 +101,16 @@ const friends = YukinaConfig.friends;
   }
 
   .apply-card {
-    @apply rounded-2xl bg-gradient-to-br from-[var(--primary-color-lighten)] to-[var(--primary-color)] p-8 text-center;
+    @apply rounded-2xl bg-gradient-to-br from-[var(--primary-color-lighten)] to-[var(--primary-color)] p-6 text-center;
   }
 
   .apply-title {
-    @apply mb-4 text-2xl font-bold text-white;
+    @apply mb-3 text-2xl font-bold text-white;
     font-family: var(--primary-font);
   }
 
   .apply-description {
-    @apply mb-4 text-lg text-white/90;
-    font-family: var(--primary-font);
-  }
-
-  .apply-requirements {
-    @apply mb-6 text-sm text-white/80;
+    @apply mb-6 text-lg text-white/90;
     font-family: var(--primary-font);
   }
 
@@ -125,7 +119,12 @@ const friends = YukinaConfig.friends;
   }
 
   .contact-button {
-    @apply rounded-lg bg-white px-6 py-3 font-semibold text-[var(--primary-color)] transition-all hover:bg-white/90 hover:shadow-lg;
+    @apply inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 font-semibold text-[var(--primary-color)] shadow-md transition-all;
+    @apply hover:scale-105 hover:shadow-lg;
     font-family: var(--primary-font);
+  }
+
+  .contact-button:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%);
   }
 </style>

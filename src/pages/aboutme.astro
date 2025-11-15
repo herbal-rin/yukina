@@ -1,0 +1,655 @@
+---
+import Base from "../layouts/BaseLayout.astro";
+import NavBar from "../components/NavBar.astro";
+import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import YukinaConfig from "../../yukina.config";
+
+const title = "关于我";
+const subTitle = "About Me";
+---
+
+<Base>
+  <NavBar />
+  <Banner title={title} subTitle={subTitle} />
+  
+  <div class="main-container my-10">
+    <div class="transition-leaving w-full space-y-8">
+  <div class="aboutme-wrapper">
+    <div class="aboutme-content">
+      <!-- 第一行：头像信息 + 个人简介 -->
+      <div class="top-section">
+        <!-- 左侧：头像和基本信息 -->
+        <div class="profile-card">
+          <img
+            src={YukinaConfig.avatarUrl}
+            alt="avatar"
+            class="large-avatar"
+          />
+          <div class="profile-info">
+            <h1 class="username">{YukinaConfig.username}</h1>
+            <p class="sign">{YukinaConfig.sign}</p>
+            <!-- 社交链接 -->
+            <div class="social-links">
+              {
+                YukinaConfig.socialLinks.map((item) => (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                  >
+                    <Icon name={item.icon} size={22} />
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：个人简介 -->
+        <div class="intro-card">
+          <h2 class="section-title">
+            <Icon name="heroicons:user" size={24} />
+            <span>个人简介</span>
+          </h2>
+          <div class="content-text">
+            <p>你好！我是 {YukinaConfig.username}，欢迎来到我的个人博客。</p>
+            <p>这里记录着我的学习笔记、技术分享和生活感悟。</p>
+            <p>热爱技术，喜欢探索新事物，相信通过不断学习和实践可以创造更多价值。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第二行：技能标签 + 兴趣爱好 -->
+      <div class="middle-section">
+        <!-- 左侧：技能标签 -->
+        <div class="info-card skills-card">
+          <div class="skills-container">
+            <!-- 左侧标签 -->
+            <div class="skills-left">
+              <div class="skill-tag skill-tag-left-1">
+                <span>后端开发</span>
+              </div>
+              <div class="skill-tag skill-tag-left-2">
+                <span>人工智能</span>
+              </div>
+            </div>
+
+            <!-- 中心标题 -->
+            <div class="skills-center">
+              <div class="center-circle">
+                <Icon name="heroicons:code-bracket" size={32} />
+                <span class="center-text">技能标签</span>
+              </div>
+            </div>
+            
+            <!-- 右侧标签 -->
+            <div class="skills-right">
+              <div class="skill-tag skill-tag-right-1">
+                <span>学习分享</span>
+              </div>
+              <div class="skill-tag skill-tag-right-2">
+                <span>生活记录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：兴趣爱好 -->
+        <div class="info-card hobbies-card">
+          <h2 class="section-title">
+            <Icon name="heroicons:heart" size={24} />
+            <span>兴趣爱好</span>
+          </h2>
+          <div class="hobbies-grid">
+            <div class="hobby-item hobby-item-1">
+              <div class="hobby-icon">💻</div>
+              <div class="hobby-text">
+                <p class="hobby-title">编程与技术探索</p>
+                <p class="hobby-desc">热爱代码，探索技术</p>
+              </div>
+            </div>
+            <div class="hobby-item hobby-item-2">
+              <div class="hobby-icon">📚</div>
+              <div class="hobby-text">
+                <p class="hobby-title">阅读与学习</p>
+                <p class="hobby-desc">书籍是知识的海洋</p>
+              </div>
+            </div>
+            <div class="hobby-item hobby-item-3">
+              <div class="hobby-icon">✍️</div>
+              <div class="hobby-text">
+                <p class="hobby-title">写作与分享</p>
+                <p class="hobby-desc">记录思考，分享经验</p>
+              </div>
+            </div>
+            <div class="hobby-item hobby-item-4">
+              <div class="hobby-icon">🎵</div>
+              <div class="hobby-text">
+                <p class="hobby-title">音乐欣赏</p>
+                <p class="hobby-desc">聆听旋律，感受美好</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第三行：联系方式（居中） -->
+      <div class="contact-section">
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <Icon name="heroicons:envelope" size={48} />
+          </div>
+          <h2 class="contact-title">联系我</h2>
+          <a href={YukinaConfig.contactLink} class="contact-button">
+            <Icon name="heroicons:paper-airplane" size={20} />
+            <span>发送邮件</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer />
+  </div>
+</Base>
+
+<style>
+  .main-container {
+    @apply w-full px-4 md:min-w-[80%] md:max-w-[80%] md:px-0 lg:min-w-[var(--page-width-lg)] lg:max-w-[var(--page-width-lg)] xl:min-w-[var(--page-width-xl)] xl:max-w-[var(--page-width-xl)];
+    @apply md:mx-auto;
+  }
+  
+  .aboutme-wrapper {
+    @apply w-full px-6;
+  }
+
+  .aboutme-content {
+    @apply flex flex-col space-y-6;
+  }
+
+  /* 第一行：头像 + 个人简介 */
+  .top-section {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-5;
+  }
+
+  .top-section .profile-card {
+    @apply md:col-span-2;
+  }
+
+  .top-section .intro-card {
+    @apply md:col-span-3;
+  }
+
+  /* 左侧：头像卡片 */
+  .profile-card {
+    @apply flex flex-col items-center rounded-2xl bg-[var(--card-color)] p-8 md:flex-row md:items-start md:gap-6;
+  }
+
+  .large-avatar {
+    @apply h-32 w-32 flex-shrink-0 rounded-full object-cover ring-4 ring-[var(--primary-color)] ring-offset-4 ring-offset-[var(--card-color)];
+  }
+
+  .profile-info {
+    @apply flex flex-col items-center space-y-3 md:items-start md:justify-center;
+  }
+
+  .username {
+    @apply text-2xl font-bold text-[var(--text-color)] md:text-3xl;
+  }
+
+  .sign {
+    @apply text-base italic text-[var(--text-color-lighten)] md:text-lg;
+  }
+
+  .social-links {
+    @apply mt-2 flex flex-row gap-3;
+  }
+
+  .social-link {
+    @apply flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary-color-lighten)] text-[var(--primary-color)] transition-all;
+    @apply hover:scale-110 hover:bg-[var(--primary-color)] hover:text-white;
+  }
+
+  /* 右侧：个人简介卡片 */
+  .intro-card {
+    @apply rounded-2xl bg-[var(--card-color)] p-8;
+  }
+
+  /* 第二行：技能 + 兴趣 */
+  .middle-section {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-5;
+  }
+
+  .middle-section .info-card:first-child {
+    @apply md:col-span-3;
+  }
+
+  .middle-section .info-card:last-child {
+    @apply md:col-span-2;
+  }
+
+  /* 信息卡片 */
+  .info-card {
+    @apply rounded-2xl bg-[var(--card-color)] p-8;
+  }
+
+  .section-title {
+    @apply mb-4 flex items-center gap-2 text-xl font-bold text-[var(--primary-color)] md:text-2xl;
+  }
+
+  .content-text {
+    @apply space-y-3 text-[var(--text-color)];
+  }
+
+  .content-text p {
+    @apply leading-relaxed;
+  }
+
+  /* 技能标签容器 */
+  .skills-card {
+    @apply relative min-h-[280px] md:min-h-[320px];
+  }
+
+  .skills-container {
+    @apply relative flex h-full items-center justify-center gap-8 px-4 md:gap-12;
+    min-height: 280px;
+  }
+
+  /* 左侧标签组 */
+  .skills-left {
+    @apply flex flex-col gap-8 md:gap-12;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(30px);
+  }
+
+  /* 右侧标签组 */
+  .skills-right {
+    @apply flex flex-col gap-8 md:gap-12;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-30px);
+  }
+
+  /* 鼠标悬停在容器上时，标签散开 */
+  .skills-container:hover .skills-left {
+    transform: translateX(0);
+  }
+
+  .skills-container:hover .skills-right {
+    transform: translateX(0);
+  }
+
+  /* 标签错位排列 - 左侧 */
+  .skill-tag-left-1 {
+    margin-top: -20px;
+    margin-left: -10px;
+  }
+
+  .skill-tag-left-2 {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  /* 标签错位排列 - 右侧 */
+  .skill-tag-right-1 {
+    margin-top: 10px;
+    margin-right: -10px;
+  }
+
+  .skill-tag-right-2 {
+    margin-top: -10px;
+    margin-right: 10px;
+  }
+
+  /* 中心圆形 */
+  .skills-center {
+    @apply flex-shrink-0;
+  }
+
+  .center-circle {
+    @apply flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gradient-to-br from-[var(--primary-color)] to-purple-600 text-white shadow-lg md:h-40 md:w-40;
+    animation: breathe 3s ease-in-out infinite;
+  }
+
+  .center-text {
+    @apply mt-2 text-sm font-bold md:text-base;
+  }
+
+  /* 呼吸动画 */
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.5);
+    }
+  }
+
+  /* 技能标签 */
+  .skill-tag {
+    @apply flex items-center justify-center rounded-full bg-[var(--primary-color-lighten)] px-5 py-2.5 text-sm font-medium text-[var(--primary-color)] shadow-md md:px-6 md:py-3 md:text-base;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+  }
+
+  /* 鼠标悬停在具体标签上时放大 */
+  .skill-tag:hover {
+    @apply bg-[var(--primary-color)] text-white shadow-xl;
+    transform: scale(1.25) !important;
+    z-index: 20;
+  }
+
+  /* 左侧标签动画 */
+  .skill-tag-left-1 {
+    animation: float-left-1 5s ease-in-out infinite;
+  }
+
+  .skill-tag-left-2 {
+    animation: float-left-2 5.5s ease-in-out infinite;
+  }
+
+  /* 右侧标签动画 */
+  .skill-tag-right-1 {
+    animation: float-right-1 4.8s ease-in-out infinite;
+  }
+
+  .skill-tag-right-2 {
+    animation: float-right-2 5.2s ease-in-out infinite;
+  }
+
+  /* 浮动动画 - 左侧 */
+  @keyframes float-left-1 {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-8px) translateX(-5px) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-3px) translateX(-8px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(5px) translateX(-3px) rotate(2deg);
+    }
+  }
+
+  @keyframes float-left-2 {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(6px) translateX(5px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(10px) translateX(8px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(3px) translateX(4px) rotate(-2deg);
+    }
+  }
+
+  /* 浮动动画 - 右侧 */
+  @keyframes float-right-1 {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(5px) translateX(6px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(-2px) translateX(10px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-7px) translateX(4px) rotate(-2deg);
+    }
+  }
+
+  @keyframes float-right-2 {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-6px) translateX(-4px) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-7px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-4px) translateX(-3px) rotate(2deg);
+    }
+  }
+
+  /* 兴趣爱好卡片 */
+  .hobbies-card {
+    @apply overflow-hidden;
+  }
+
+  .hobbies-grid {
+    @apply grid grid-cols-1 gap-4;
+  }
+
+  .hobby-item {
+    @apply flex items-start gap-4 rounded-xl bg-gradient-to-r p-4 transition-all duration-300;
+    cursor: pointer;
+  }
+
+  /* 每个兴趣爱好不同的渐变色 */
+  .hobby-item-1 {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.15) 100%);
+    animation: slide-in-right 0.6s ease-out;
+  }
+
+  .hobby-item-2 {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(219, 39, 119, 0.15) 100%);
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .hobby-item-3 {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.1) 0%, rgba(6, 182, 212, 0.15) 100%);
+    animation: slide-in-right 1s ease-out;
+  }
+
+  .hobby-item-4 {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(249, 115, 22, 0.15) 100%);
+    animation: slide-in-right 1.2s ease-out;
+  }
+
+  .hobby-item:hover {
+    @apply scale-105 shadow-lg;
+    transform: translateX(8px) scale(1.02);
+  }
+
+  .hobby-icon {
+    @apply flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-white/50 text-3xl shadow-md transition-all duration-300;
+  }
+
+  .hobby-item:hover .hobby-icon {
+    @apply scale-110 shadow-xl;
+    animation: bounce-icon 0.6s ease-in-out;
+  }
+
+  .hobby-text {
+    @apply flex flex-col gap-1;
+  }
+
+  .hobby-title {
+    @apply text-base font-semibold text-[var(--text-color)] md:text-lg;
+  }
+
+  .hobby-desc {
+    @apply text-xs text-[var(--text-color-lighten)] md:text-sm;
+  }
+
+  /* 滑入动画 */
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* 图标弹跳动画 */
+  @keyframes bounce-icon {
+    0%, 100% {
+      transform: scale(1.1) translateY(0);
+    }
+    50% {
+      transform: scale(1.1) translateY(-8px);
+    }
+  }
+
+  /* 第三行：联系方式（全宽） */
+  .contact-section {
+    @apply w-full;
+  }
+
+  .contact-card {
+    @apply w-full rounded-3xl px-10 py-5 text-center shadow-lg md:px-12 md:py-6;
+    background: linear-gradient(135deg, 
+      rgba(139, 92, 246, 0.15) 0%,
+      rgba(167, 139, 250, 0.2) 25%,
+      rgba(196, 181, 253, 0.25) 50%,
+      rgba(221, 214, 254, 0.3) 75%,
+      rgba(233, 213, 255, 0.35) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+    animation: pulse-bg 5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-bg {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(15px, 15px) scale(1.05);
+      opacity: 0.6;
+    }
+  }
+
+  .contact-icon-wrapper {
+    @apply relative z-10 mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full text-[var(--primary-color)] backdrop-blur-sm md:h-16 md:w-16 md:mb-3;
+    background: rgba(255, 255, 255, 0.6);
+    animation: float-contact 3s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+  }
+
+  @keyframes float-contact {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .contact-title {
+    @apply relative z-10 mb-4 text-2xl font-bold text-[var(--primary-color)] md:text-3xl md:mb-5;
+  }
+
+  /* 联系按钮 */
+  .contact-button {
+    @apply relative z-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 font-semibold text-[var(--primary-color)] shadow-md transition-all md:px-10 md:py-3.5;
+    @apply hover:scale-105 hover:shadow-lg;
+  }
+
+  .contact-button:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%);
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .profile-card,
+    .intro-card,
+    .info-card,
+    .contact-card {
+      @apply p-6;
+    }
+
+    .top-section,
+    .middle-section {
+      @apply grid-cols-1;
+    }
+
+    .profile-card {
+      @apply flex-col items-center;
+    }
+
+    .profile-info {
+      @apply items-center;
+    }
+
+    .contact-card {
+      @apply w-full;
+    }
+
+    /* 移动端技能标签调整 */
+    .skills-card {
+      @apply min-h-[240px];
+    }
+
+    .skills-container {
+      min-height: 240px;
+      @apply gap-6 px-2;
+    }
+
+    .center-circle {
+      @apply h-28 w-28;
+    }
+
+    .skill-tag {
+      @apply px-4 py-2 text-xs;
+    }
+
+    .skills-left,
+    .skills-right {
+      @apply gap-3;
+    }
+
+    /* 移动端聚拢效果调整 */
+    .skills-left {
+      transform: translateX(20px);
+    }
+
+    .skills-right {
+      transform: translateX(-20px);
+    }
+
+    /* 移动端联系卡片调整 */
+    .contact-card {
+      @apply px-6 py-4;
+    }
+
+    .contact-icon-wrapper {
+      @apply mb-2 h-12 w-12;
+    }
+
+    .contact-title {
+      @apply mb-3 text-xl;
+    }
+
+    .contact-button {
+      @apply px-6 py-2.5 text-sm;
+    }
+  }
+</style>
+

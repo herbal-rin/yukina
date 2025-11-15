@@ -68,8 +68,8 @@ const YukinaConfig: Configuration = {
       href: "/archive",
     },
     {
-      nameKey: I18nKeys.nav_bar_about,  // 关于
-      href: "/about",
+      nameKey: I18nKeys.nav_bar_about,  // 关于我
+      href: "/aboutme",
     },
     {
       nameKey: I18nKeys.nav_bar_friends, // 友链
@@ -92,7 +92,7 @@ const YukinaConfig: Configuration = {
    * 个人签名 - 显示在个人资料下方
    * 建议：一句话座右铭或个人介绍
    */
-  sign: "Ad Astra Per Aspera.",
+  sign: "生如远舟，一期一会",
   
   /**
    * 头像URL - 你的个人头像
@@ -131,6 +131,10 @@ const YukinaConfig: Configuration = {
       link: "https://music.163.com/#/user/home?id=1986957869",
     },
     {
+      icon: "mdi:steam",
+      link: "https://steamcommunity.com/id/488491613/",
+    },
+    {
       icon: "heroicons:envelope",
       link: "mailto:herbal_rin@126.com",
     },
@@ -162,6 +166,13 @@ const YukinaConfig: Configuration = {
    * - tags: 友链标签 (可选)
    */
   friends: [
+    {
+      name: "开往",
+      url: "https://www.travellings.cn/go.html",
+      avatar: "https://vip.123pan.cn/1846863100/yk6baz03t0m000d7w33gmyrr9wgx0339DIYxAqYzDweODcxvBIryBF==.png",
+      description: "开往-友链接力",
+      tags: ["友链", "随机"]
+    },
     {
       name: "cannian",
       url: "https://blog.cannian.space/",
