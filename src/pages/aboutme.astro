@@ -140,7 +140,7 @@ const subTitle = "About Me";
       <div class="contact-section">
         <div class="contact-card">
           <div class="contact-icon-wrapper">
-            <Icon name="heroicons:envelope" size={48} />
+            <Icon name="heroicons:envelope" class="contact-icon" size={48} />
           </div>
           <h2 class="contact-title">联系我</h2>
           <a href={YukinaConfig.contactLink} class="contact-button">
@@ -641,6 +641,11 @@ const subTitle = "About Me";
 
     .contact-icon-wrapper {
       @apply mb-2 h-12 w-12;
+    }
+
+    .contact-icon {
+      width: 32px !important;
+      height: 32px !important;
     }
 
     .contact-title {
