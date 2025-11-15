@@ -130,6 +130,10 @@ const YukinaConfig: Configuration = {
       icon: "mingcute:netease-music-line",
       link: "https://music.163.com/#/user/home?id=1986957869",
     },
+    {
+      icon: "heroicons:envelope",
+      link: "mailto:herbal_rin@126.com",
+    },
   ],
 
   /**
