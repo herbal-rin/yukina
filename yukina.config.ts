@@ -20,7 +20,7 @@ const YukinaConfig: Configuration = {
    * 网站副标题 - 显示在横幅区域
    * 建议：一句话描述你的博客主题
    */
-  subTitle: "my blog",
+  subTitle: "分享与交流",
   
   /**
    * 品牌标题 - 显示在导航栏左侧
@@ -92,7 +92,7 @@ const YukinaConfig: Configuration = {
    * 个人签名 - 显示在个人资料下方
    * 建议：一句话座右铭或个人介绍
    */
-  sign: "生如远舟，一期一会",
+  sign: "Per aspera and astra.",
   
   /**
    * 头像URL - 你的个人头像
